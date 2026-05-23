@@ -43,7 +43,7 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-white);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7; /* Ditingkatkan sedikit agar paragraf nyaman dibaca */
             overflow-x: hidden;
         }
 
@@ -192,7 +192,6 @@
         .hero-name {
             font-size: 5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 0.5rem;
             line-height: 1.1;
-            /* PERUBAHAN: Warna solid (tanpa gradient) */
             color: var(--primary-blue); 
         }
 
@@ -234,7 +233,7 @@
         }
         .btn-outline:hover { background-color: var(--soft-blue); transform: translateY(-3px); }
 
-        /* --- ABOUT ME --- */
+        /* --- ABOUT ME (PERBAIKAN UTAMA) --- */
         .about-card {
             background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
             border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-soft);
@@ -245,7 +244,25 @@
             position: absolute; top: 20px; right: 30px; font-size: 5rem;
             color: rgba(37, 99, 235, 0.05);
         }
-        .about-text { font-size: 1.1rem; color: var(--text-gray); text-align: justify; max-width: 900px; margin: 0 auto; }
+        
+        .about-content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text { 
+            font-size: 1.1rem; 
+            color: var(--text-gray); 
+            text-align: left; /* Rata kiri agar enak dibaca */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1.5rem; /* Jarak antar paragraf */
+        }
+
+        /* Hapus margin bawah untuk paragraf terakhir agar tidak terlalu nganggur */
+        .about-text:last-child {
+            margin-bottom: 0;
+        }
 
         /* --- SKILLS SECTION --- */
         .skills-section { background-color: var(--soft-blue); }
@@ -351,7 +368,7 @@
             background: #f0f0f0;
         }
 
-        /* Khusus IT Support (16:9): BATAS UKURAN KEcil */
+        /* Khusus IT Support (16:9): BATAS UKURAN KECIL */
         .gallery-item img.landscape {
             max-width: 150px; /* Desktop: 150px */
         }
@@ -398,7 +415,6 @@
             .skills-grid { grid-template-columns: repeat(2, 1fr); }
             .gallery-item img { max-height: 300px; }
             
-            /* PERBAIKAN: Di HP dibuat TETAP KECIL (200px), bukan persen */
             .gallery-item img.landscape { 
                 max-width: 200px; /* Ukuran tetap 200px di HP agar kecil */
             }
@@ -428,6 +444,7 @@
             <div class="nav-links" id="navLinks">
                 <a href="#about" onclick="closeMenu()">About Me</a>
                 <a href="#skills" onclick="closeMenu()">Skills</a>
+                <!-- PERBAIKAN: Tag href yang tadinya error -->
                 <a href="#experience" onclick="closeMenu()">Experience</a>
                 <a href="#projects" onclick="closeMenu()">Projects</a>
                 <a href="#contact" onclick="closeMenu()">Contact</a>
@@ -442,6 +459,7 @@
         
         <div class="container hero-content">
             <div class="profile-img-container">
+                <!-- Pastikan file foto ada di folder yang sama atau ganti dengan URL -->
                 <img src="foto vanya formal.jpeg" alt="Van Profile" class="profile-img">
             </div>
             
@@ -464,13 +482,22 @@
         <div class="container">
             <h2 class="section-title reveal">About Me</h2>
             <div class="about-card reveal">
-                <p class="about-text">
-Halo, saya Vanya Fitria Ramadhani, Saya memiliki ketertarikan pada bidang teknologi, computer engineering, dan desain digital. Saya memiliki pengalaman dalam troubleshooting komputer, instalasi dan maintenance sistem operasi Windows, networking dasar, serta dukungan teknis perangkat komputer.
+                <div class="about-content-wrapper">
+                    <!-- Paragraf 1 -->
+                    <p class="about-text">
+                        Halo, saya Vanya Fitria Ramadhani. Saya memiliki ketertarikan yang besar pada bidang teknologi, computer engineering, dan desain digital. Saya memiliki pengalaman praktis dalam troubleshooting komputer, instalasi dan maintenance sistem operasi Windows, networking dasar, serta dukungan teknis perangkat komputer.
+                    </p>
 
-Selain itu, saya juga tertarik pada pengembangan website dan desain antarmuka dengan konsep clean, modern, dan user-friendly. Saya senang mempelajari teknologi baru, mengembangkan kemampuan di bidang IT, serta terlibat dalam berbagai project digital untuk meningkatkan keterampilan teknis maupun kreativitas.
+                    <!-- Paragraf 2 -->
+                    <p class="about-text">
+                        Selain itu, saya juga tertarik pada pengembangan website dan desain antarmuka dengan konsep clean, modern, dan user-friendly. Saya senang mempelajari teknologi baru, mengembangkan kemampuan di bidang IT, serta terlibat dalam berbagai project digital untuk meningkatkan keterampilan teknis maupun kreativitas saya.
+                    </p>
 
-Dengan kemampuan problem solving, adaptasi teknologi, dan ketelitian dalam bekerja, saya terus berusaha mengembangkan diri menjadi pribadi yang profesional dan kompeten di bidang teknologi serta digital development.
-                </p>
+                    <!-- Paragraf 3 -->
+                    <p class="about-text">
+                        Dengan kemampuan problem solving, adaptasi teknologi, dan ketelitian dalam bekerja, saya terus berusaha mengembangkan diri menjadi pribadi yang profesional dan kompeten di bidang teknologi serta digital development.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -661,7 +688,10 @@ Dengan kemampuan problem solving, adaptasi teknologi, dan ketelitian dalam beker
                             <img class="landscape" src="clon vga.jpg" alt="IT Doc 10">
                         </div>
                         <div class="gallery-item">
-                            <img class="landscape" src="praktik g.jpg" alt="IT Doc 11">
+                            <img class="landscape" src="instal windows.jpg" alt="IT Doc 11">
+                        </div>
+                        <div class="gallery-item">
+                            <img class="landscape" src="praktik g.jpg" alt="IT Doc 12">
                         </div>
                     </div>
                 </div>
@@ -678,7 +708,7 @@ Dengan kemampuan problem solving, adaptasi teknologi, dan ketelitian dalam beker
             <div class="social-icons">
                 <a href="https://instagram.com/ryasunshine" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="mailto:vanyafitriaramadhani@email.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/usernamekamu" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://vanixo.github.io/vanyafitria" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
